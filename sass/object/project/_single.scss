@@ -1,0 +1,48 @@
+@use "./global/variables" as var;
+@use "./global/mixin" as mixin;
+
+.p-single {
+  width: 100%;
+
+  @include mixin.mq('tab') {
+    margin: 5% auto;
+    max-width: 90%;
+
+  }
+}
+
+.p-single__article {
+  background-color: var.$white;
+  
+}
+
+.p-single__figure {
+
+  img {
+    width: 100%;
+    height: auto;
+
+  }
+}
+
+.p-single__inner {
+  max-width: 85%;
+  padding: 7.5% 0;
+  margin: 0 auto;
+
+}
+
+.p-single__inner {
+  max-width: 85%;
+  padding: 7.5% 0;
+  margin: 0 auto;
+
+}
+
+.p-single__content {
+  
+  p {
+    margin-bottom: 1.1em;
+  }
+
+}

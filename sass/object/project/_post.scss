@@ -1,0 +1,65 @@
+@use "./global/variables" as var;
+@use "./global/mixin" as mixin;
+
+.p-post {
+  width: 100%;
+
+  &:not(:first-child) {
+    margin-top: 20px;
+
+    @include mixin.mq('tab') {
+      margin-top: 0;
+  
+    }
+  }
+
+  @include mixin.mq('tab') {
+    width: 50%;
+    padding: 10px;
+    
+  }
+
+  @include mixin.mq('pc-wide') {
+    width: 33.3%;
+    
+  }
+}
+
+.p-post__inner {
+  padding: 16px;
+  background: var.$white;
+
+}
+
+.p-post__title {
+  font-size: 1.25em;
+  font-weight: 700;
+  word-break: break-word;
+ 
+  a {
+    color: var.$black;
+    text-decoration: none;
+  }
+
+}
+
+.p-post__figure {
+  background: var.$white;
+
+  img {
+    width: 100%;
+    display: block;
+    height: auto;
+
+  }
+}
+
+.p-post__excerpt {
+  margin-top: 8px;
+
+}
+
+.p-post__tag {
+  margin-bottom: 8px;
+
+}

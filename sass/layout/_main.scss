@@ -1,0 +1,35 @@
+@use "./global/variables" as var;
+@use "./global/mixin" as mixin;
+
+.l-main {
+  position: relative;
+
+  @include mixin.mq('pc') {
+    display: flex;
+  }
+}
+
+.l-main__content {
+  max-width: 90%;
+  margin: 5% auto;
+
+  @include mixin.mq('pc') {
+    max-width: 85%;
+    margin: 40px auto 50px;
+
+  }
+}
+
+.l-main__post {
+
+  @include mixin.mq('tab') {
+    display: flex;
+    flex-wrap: wrap;
+
+  }
+}
+
+.l-main__pagetitle {
+
+  padding: 1% 0 10px;
+}

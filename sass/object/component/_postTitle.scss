@@ -1,0 +1,10 @@
+@use "./global/variables" as var;
+@use "./global/mixin" as mixin;
+
+.c-postTitle {
+  font-size: 2rem;
+  font-weight: 700;
+  word-break: break-word;
+  margin-bottom: 20px;
+
+}

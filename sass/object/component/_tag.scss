@@ -1,0 +1,12 @@
+@use "./global/variables" as var;
+@use "./global/mixin" as mixin;
+
+.c-tag {
+  display: inline-block;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  padding: 0 5px;
+  color: var.$white;
+  background-color: var.$darkgray;
+  
+}

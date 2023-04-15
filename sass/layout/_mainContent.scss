@@ -1,0 +1,48 @@
+@use "./global/variables" as var;
+@use "./global/mixin" as mixin;
+
+.l-mainContent {
+  // background-color: #f2f2f2;
+  width: 100vw;
+  // height: 100vh;
+  padding-top: 81px;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    background: var.$gray-main;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+
+    @include mixin.mq('pc') {
+      margin-left: 280px;
+  
+    }
+  }
+
+  @include mixin.mq('tab') {
+    padding-top: 110px;
+
+  }
+
+  @include mixin.mq('pc') {
+    margin-left: 280px;
+    padding-top: 0;
+   
+  }
+ 
+}
+
+.l-mainContent__content {
+  max-width: 90%;
+  margin: 5% auto;
+
+  @include mixin.mq('tab') {
+    display: flex;
+}
+  
+}

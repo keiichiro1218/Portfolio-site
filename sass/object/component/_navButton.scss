@@ -1,0 +1,59 @@
+@use "./global/variables" as var;
+@use "./global/mixin" as mixin;
+
+.c-navButton {
+
+  @include mixin.mq('pc') {
+    display: none;
+  }
+  
+}
+
+.c-navButton__bars {
+  height: 30px;
+  width: 30px;
+  position: relative;
+
+}
+
+.c-navButton__bar {
+  width: 30px;
+  height: 2px;
+  background: var.$darkgray;
+  border-radius: 2px;
+  position: absolute;
+  transition: all .4s;
+
+}
+
+.c-navButton__bar-top {
+  left: 0;
+  top: 0;
+
+   &.active {
+    transform: translateY(15px) rotate(-45deg);
+
+  }
+
+}
+
+.c-navButton__bar-center {
+  left: 0;
+  top: 14px;
+
+   &.active {
+    display: none;
+
+  }
+}
+
+.c-navButton__bar-bottom {
+  left: 0;
+  bottom: 0;
+
+  &.active {
+    transform: translateY(-13px) rotate(45deg);
+  
+  }
+
+}
