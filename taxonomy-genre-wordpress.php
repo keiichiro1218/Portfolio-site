@@ -28,10 +28,16 @@
                 </a>
               </figure>
               <div class="p-post__header">
-                <div class="p-post__tag c-tag">
-                  <?php echo get_the_terms(get_the_ID(), 'genre')[0]->name ?>
-                </div>
-                <!-- /.p-post__tag .c-tag -->
+                <?php
+                $terms = get_the_terms($post->ID, 'genre');
+                if ( $terms ) {
+                  echo '<div class="p-post__tag-wrapper"> ';
+                  foreach ( $terms as $term ) {
+                    echo '<div class="c-tag p-post__tag">'.$term->name.'</div>';
+                  }
+                  echo '</div>';
+                }
+                ?>
                 <h2 class="p-post__title">
                   <a href=""><?php the_title(); ?></a>
                 </h2>

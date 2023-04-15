@@ -625,8 +625,12 @@ video {
   margin-top: 8px;
 }
 
-.p-post__tag {
+.p-post__tag-wrapper {
   margin-bottom: 8px;
+}
+
+.p-post__tag:nth-child(n+2) {
+  margin-left: 5px;
 }
 
 .p-single {

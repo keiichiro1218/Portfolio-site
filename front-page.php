@@ -4,7 +4,7 @@
     <div class="l-main__post">
       <?php
         $args = [
-          'post_type' => 'work', // カスタム投稿名が「gourmet」の場合
+          'post_type' => 'work', // カスタム投稿名
           'posts_per_page' => 5, // 表示する数
         ];
         $my_query = new WP_Query($args); ?>
@@ -23,20 +23,16 @@
                 </a>
               </figure>
               <div class="p-post__header">
-                <div class="p-post__tag c-tag">
-                  <!-- <?php echo get_the_terms(get_the_ID(), 'genre')[0]->name ?> -->
                   <?php
-                    $terms = get_the_terms($post->ID, 'genre');
-                    if(!empty($terms)) {
-                      foreach($terms as $term):
-                      echo $term->name;
-                      endforeach;
-                    } else {
-                      echo '未分類';
+                  $terms = get_the_terms($post->ID, 'genre');
+                  if ( $terms ) {
+                    echo '<div class="p-post__tag-wrapper"> ';
+                    foreach ( $terms as $term ) {
+                      echo '<div class="c-tag p-post__tag">'.$term->name.'</div>';
                     }
+                    echo '</div>';
+                  }
                   ?>
-                </div>
-                <!-- /.p-post__tag .c-tag -->
                 <h2 class="p-post__title">
                   <a href=""><?php the_title(); ?></a>
                 </h2>
@@ -51,7 +47,7 @@
           </div>
           <!-- /.p-post -->
         <?php endwhile; ?>
-      <?php else: // 投稿がない場合?>
+      <?php else: ?>
         <p>まだ投稿がありません。</p>
       <?php endif; wp_reset_postdata(); ?>  
     </div>
