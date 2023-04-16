@@ -2,10 +2,11 @@
 @use "./global/mixin" as mixin;
 
 .c-pageTitle {
-  border-bottom: 2px solid #e1e1e1;
+  border-bottom: 2px solid var.$gray-border;
   font-weight: 700;
   line-height: 120%;
   padding-bottom: 10px;
-  color: #666;
+  color: var.$gray-title;
   font-size: 24px;
+
 }

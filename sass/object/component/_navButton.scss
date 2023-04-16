@@ -19,7 +19,7 @@
 .c-navButton__bar {
   width: 30px;
   height: 2px;
-  background: var.$darkgray;
+  background: var.$gray-dark;
   border-radius: 2px;
   position: absolute;
   transition: all .4s;
@@ -55,5 +55,4 @@
     transform: translateY(-13px) rotate(45deg);
   
   }
-
 }

@@ -30,7 +30,7 @@
 .c-nav__list {
   padding: 7.5% 5%;
   list-style: none;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid var.$gray;
 
   @include mixin.mq('pc') {
     border: 0;
@@ -42,7 +42,7 @@
     display: block;
     width: 48px;
     height: 2px;
-    background: var.$lightgray;
+    background: var.$gray-light;
     margin: 35px 0;
 
     @include mixin.mq('tab-max') {
