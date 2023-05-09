@@ -11,28 +11,33 @@
       
       <?php if ($my_query->have_posts()): // 投稿がある場合 ?>  
         <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
-          <div class="p-post">
+          <div class="p-post" <?php post_class(); ?>>
             <div class="p-post__inner">
               <figure class="p-post__figure">
                 <a href="<?php the_permalink() ?>">
                   <?php 
                   if ( has_post_thumbnail() ) { // 投稿にアイキャッチ画像が割り当てられているかチェックします。
                     the_post_thumbnail( 'post-thumb' );
-                  } 
+                  } else {
+                    echo '<img class="p-post__no-img" src="' .get_template_directory_uri(). '/assets/noimage.png" alt="" />';
+                  }
                   ?>
                 </a>
               </figure>
               <div class="p-post__header">
-                  <?php
-                  $terms = get_the_terms($post->ID, 'genre');
-                  if ( $terms ) {
-                    echo '<div class="p-post__tag-wrapper"> ';
-                    foreach ( $terms as $term ) {
-                      echo '<div class="c-tag p-post__tag">'.$term->name.'</div>';
-                    }
-                    echo '</div>';
+                <?php
+                $terms = get_the_terms($post->ID, 'genre');
+                if ( $terms ) {
+                  echo '<div class="p-post__tag-wrapper"> ';
+                  foreach ( $terms as $term ) {
+                    echo '<div class="c-tag p-post__tag">'.$term->name.'</div>';
                   }
-                  ?>
+                  echo '</div>';
+                } else {
+                  echo '<div class="p-post__tag-wrapper">'.'<div class="c-tag p-post__tag">'."未分類".'</div>'.'</div>';
+              
+                }
+                ?>
                 <h2 class="p-post__title">
                   <a href=""><?php the_title(); ?></a>
                 </h2>
@@ -58,5 +63,6 @@
 </div>
 <!-- /.l-main -->
   <?php wp_footer(); ?> 
+  <?php wp_link_pages( $args ); ?>
 </body>
 </html>

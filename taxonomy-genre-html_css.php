@@ -29,14 +29,14 @@
               </figure>
               <div class="p-post__header">
                 <?php
-                $terms = get_the_terms($post->ID, 'genre');
-                if ( $terms ) {
-                  echo '<div class="p-post__tag-wrapper"> ';
-                  foreach ( $terms as $term ) {
-                    echo '<div class="c-tag p-post__tag">'.$term->name.'</div>';
-                  }
-                  echo '</div>';
-                }
+                  $terms = get_the_terms($post->ID, 'genre');
+                  if ( $terms ) {
+                    echo '<div class="p-post__tag-wrapper"> ';
+                    foreach ( $terms as $term ) {
+                      echo '<div class="c-tag p-post__tag">'.$term->name.'</div>';
+                    }
+                    echo '</div>';
+                  } 
                 ?>
                 <h2 class="p-post__title">
                   <a href=""><?php the_title(); ?></a>

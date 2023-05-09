@@ -12,13 +12,19 @@ add_action( 'wp_enqueue_scripts', 'my_enqueue_scripts' );
 // アイキャッチ画像を有効にする。
 add_theme_support('post-thumbnails');
 // サムネイルのsize追加
-add_image_size( 'post-thumb', 508, 9999 );
+add_image_size( 'post-thumb', 300, 9999, );
+
+// 投稿とコメントのRSSフィードのリンクを有効
+add_theme_support( 'automatic-feed-links' );
+
+// タイトルタグの自動生成
+add_theme_support( 'title-tag' );
 
 // メニューの登録
 function my_menu_init() {
     register_nav_menus(
         array(
-        'nav' => 'ナビメニュー',
+        'nav' => 'ナビメニュー'
         )
     );
 }
@@ -45,3 +51,4 @@ function new_excerpt_more($more) {
     return '…';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+

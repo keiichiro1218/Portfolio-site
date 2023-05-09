@@ -435,7 +435,7 @@ video {
   font-family: "Lato";
   font-size: 24px;
   letter-spacing: 1px;
-  padding: 5px 7px 5px 9px;
+  padding: 5px 7px 5px 0;
   line-height: 150%;
   font-weight: 700;
   color: #333;
@@ -443,7 +443,7 @@ video {
 }
 @media screen and (min-width: 1000px) {
   .c-blogTitle a {
-    padding: 9px 13px;
+    padding: 9px 13px 9px 0;
   }
 }
 
@@ -633,6 +633,11 @@ video {
   margin-left: 5px;
 }
 
+.p-post__no-img {
+  width: 760px;
+  height: 428px;
+}
+
 .p-single {
   width: 100%;
 }
@@ -666,4 +671,12 @@ video {
 
 .p-single__content p {
   margin-bottom: 1.1em;
+}
+
+p.has-background {
+  padding: 0.5em 2.375em;
+}
+
+.wp-caption {
+  display: block;
 }

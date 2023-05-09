@@ -1,0 +1,40 @@
+@use "./global/variables" as var;
+@use "./global/mixin" as mixin;
+
+// ブロックディターの背景色設定時
+p.has-background {
+  padding: 0.5em 2.375em;
+
+}
+
+.wp-caption {
+  font-size: 90%;
+}
+
+.wp-caption-text {
+
+}
+
+.sticky {
+
+}
+
+.gallery-caption {
+
+}
+
+.bypostauthor {
+
+}
+
+.alignright {
+
+}
+
+.alignleft {
+
+}
+
+.aligncenter {
+
+}

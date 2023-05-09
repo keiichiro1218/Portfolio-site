@@ -3,7 +3,7 @@
     <div class="l-main__content">
       <div class="l-main__pagetitle">
         <h1 class="c-pageTitle">
-          <?php echo get_the_terms(get_the_ID(), 'genre')[0]->name ?>
+          WordPress
         </h1>
       </div>
       <!-- /.l-main__pagetitle -->
